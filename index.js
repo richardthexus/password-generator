@@ -4,20 +4,11 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 
 let passwordEl = document.querySelector("#password-el")
-let isGenerated = false;
 
 function generatePassword() {
+  passwordEl.textContent = "";   
   for (let i = 0; i < 15 ; i++) {
         let newPassword = characters[Math.floor ( Math.random() * characters.length )]
         passwordEl.textContent += newPassword; 
     } 
-    isGenerated = true;
-}
-
-function checkGenerated () {
-    if (isGenerated === false) {
-            generatePassword(); 
-        } else {
-             return false;
-        }
 }
